@@ -3,6 +3,10 @@ shorewall_reloaded CHANGELOG
 
 This file is used to list changes made in each version of the shorewall_reloaded cookbook.
 
+0.3.2
+-----
+- [Claudio Cesar Sanchez Tejeda] - Removed the symbols from the template files
+
 0.3.0
 -----
 - [Claudio Cesar Sanchez Tejeda] - A lot of changes...
