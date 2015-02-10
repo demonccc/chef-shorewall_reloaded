@@ -1,0 +1,20 @@
+# File managed by Chef.
+# Don't edit it manually because all the changes will be overwritten.
+
+startup=<%=@startup %> 
+
+<% if @default['wait_interface'] -%>
+wait_interface="<%= @default['wait_interface'] %>" 
+<% end -%>
+
+OPTIONS="<%= @default['options'] %>"
+
+STARTOPTIONS="<%= @default['startoptions'] %>"
+
+RESTARTOPTIONS="<%= @default['restartoptions'] %>"
+
+INITLOG=<%= @default['initlog'] %>
+
+SAFESTOP=<%= @default['safestop'] %>
+
+# EOF
