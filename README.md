@@ -112,37 +112,37 @@ Attributes
   <tr>
     <td><tt>['shorewall']['zones']</tt></td>
     <td>Array</td>
-    <td>This is an array of hashes that contain the zones settings. Each item could have the following keys: `zone`, `type`, `options`, `in_options`, `out_options`</td>
+    <td>This is an array of hashes that contain the zones settings. Each item could have the following keys: <tt>zone</tt>, <tt>type</tt>, <tt>options</tt>, <tt>in_options</tt>, <tt>out_options</tt></td>
     <td><tt>[]</tt></td>
   </tr>
   <tr>
     <td><tt>['shorewall']['policy']</tt></td>
     <td>Array</td>
-    <td>This is an array of hashes that contain the polices settings. Each item could have the following keys: `source`, `dest`, `policy`, `log_level`, `limit`</td>
+    <td>This is an array of hashes that contain the polices settings. Each item could have the following keys: <tt>source</tt>, <tt>dest</tt>, <tt>policy</tt>, <tt>log_level</tt>, <tt>limit</tt></td>
     <td><tt>[]</tt></td>
   </tr>
   <tr>
     <td><tt>['shorewall']['interfaces']</tt></td>
     <td>Array</td>
-    <td>This is an array of hashes that contain the interfaces settings. Each item could have the following keys: `zone`, `interface`, `broadcast`, `options`</td>
+    <td>This is an array of hashes that contain the interfaces settings. Each item could have the following keys: <tt>zone</tt>, <tt>interface</tt>, <tt>broadcast</tt>, <tt>options</tt></td>
     <td><tt>[]</tt></td>
   </tr>
   <tr>
     <td><tt>['shorewall']['hosts']</tt></td>
     <td>Array</td>
-    <td>This is an array of hashes that contain the hosts settings. Each item could have the following keys: `zone`, `hosts`, `options`</td>
+    <td>This is an array of hashes that contain the hosts settings. Each item could have the following keys: <tt>zone</tt>, <tt>hosts</tt>, <tt>options</tt></td>
     <td><tt>[]</tt></td>
   </tr>
   <tr>
     <td><tt>['shorewall']['rules']</tt></td>
     <td>Array</td>
-    <td>This is an array of hashes that contain the rules settings. Each item could have the following keys: `action`, `source`, `dest`, `proto`, `dest_port`, `source_port`, `original_dest`, `rate_limit`, `user`, `fwmark`</td>
+    <td>This is an array of hashes that contain the rules settings. Each item could have the following keys: <tt>action</tt>, <tt>source</tt>, <tt>dest</tt>, <tt>proto</tt>, <tt>dest_port</tt>, <tt>source_port</tt>, <tt>original_dest</tt>, <tt>rate_limit</tt>, <tt>user</tt>, <tt>fwmark</tt></td>
     <td><tt>[]</tt></td>
   </tr>
   <tr>
     <td><tt>['shorewall']['tunnels']</tt></td>
     <td>Array</td>
-    <td>This is an array of hashes that contain the tunnels settings. Each item could have the following keys: `type`, `zone`, `gateway`, `gateway_zones`</td>
+    <td>This is an array of hashes that contain the tunnels settings. Each item could have the following keys: <tt>type</tt>, <tt>zone</tt>, <tt>gateway</tt>, <tt>gateway_zones</tt></td>
     <td><tt>[]</tt></td>
   </tr>
 </table>
