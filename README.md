@@ -174,6 +174,7 @@ You need to set the zones, policies, rules, zones, interfaces in order to manage
 Examples:
 
 - Setting zones:
+
 ```json
 "shorewall": {
   "zones": [
@@ -183,7 +184,9 @@ Examples:
   ]
 }
 ```
+
 - Setting policies:
+
 ```json
 "shorewall": {
   "policy": [
@@ -193,7 +196,9 @@ Examples:
   ]
 }
 ```
+
 - Setting interfaces
+
 ```json
 "shorewall": {
   "interfaces": [
@@ -202,7 +207,9 @@ Examples:
   ]
 }
 ```
+
 - Setting rules
+
 ```json
 "shorewall": {
   "rules": [
@@ -245,7 +252,9 @@ Examples:
   ]
 }
 ```
+
 - Setting tunnels:
+
 ```json
 "shorewall": {
   "tunnels": [
