@@ -1,15 +1,15 @@
 <%
 elements=[
-  [:action, 16],
-  [:source, 16],
-  [:dest, 16],
-  [:proto, 8],
-  [:dest_port, 8],
-  [:source_port, 16],
-  [:original_dest, 16],
-  [:rate_limit, 16],
-  [:user, 8],
-  [:fwmark, 0]
+  ['action', 16],
+  ['source', 16],
+  ['dest', 16],
+  ['proto', 8],
+  ['dest_port', 8],
+  ['source_port', 16],
+  ['original_dest', 16],
+  ['rate_limit', 16],
+  ['user', 8],
+  ['fwmark', 0]
 ]
 %>
 #
@@ -26,5 +26,5 @@ elements=[
 #SECTION ESTABLISHED
 #SECTION RELATED
 SECTION NEW
-<%= shorewall_format_file(elements, node[:shorewall][:rules]) %>
+<%= shorewall_format_file(elements, node['shorewall']['rules']) %>
 #LAST LINE -- ADD YOUR ENTRIES BEFORE THIS ONE -- DO NOT REMOVE
