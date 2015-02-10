@@ -1,9 +1,9 @@
 <%
 elements=[
-  [:type, 16],
-  [:zone, 8],
-  [:gateway, 16],
-  [:gateway_zones, 8]
+  ['type', 16],
+  ['zone', 8],
+  ['gateway', 16],
+  ['gateway_zones', 8]
 ]
 %>
 #
@@ -16,5 +16,5 @@ elements=[
 #
 ############################################################################################################################
 #TYPE           ZONE    GATEWAY         GATEWAY ZONES
-<%= shorewall_format_file(elements, node[:shorewall][:tunnels]) %>
+<%= shorewall_format_file(elements, node['shorewall']['tunnels']) %>
 #LAST LINE -- ADD YOUR ENTRIES BEFORE THIS ONE -- DO NOT REMOVE

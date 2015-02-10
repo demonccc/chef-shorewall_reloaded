@@ -1,9 +1,9 @@
 <%
 elements=[
-  [:zone, 8],
-  [:interface, 16],
-  [:broadcast, 16],
-  [:options, 0]
+  ['zone', 8],
+  ['interface', 16],
+  ['broadcast', 16],
+  ['options', 0]
 ]
 %>
 #
@@ -16,5 +16,5 @@ elements=[
 #
 ###############################################################################
 #ZONE   INTERFACE       BROADCAST       OPTIONS
-<%= shorewall_format_file(elements, node[:shorewall][:interfaces]) %>
+<%= shorewall_format_file(elements, node['shorewall']['interfaces']) %>
 #LAST LINE -- ADD YOUR ENTRIES BEFORE THIS ONE -- DO NOT REMOVE

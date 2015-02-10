@@ -1,8 +1,8 @@
 <%
 elements=[
-  [:zone, 8],
-  [:hosts, 40],
-  [:options, 0]
+  ['zone', 8],
+  ['hosts', 40],
+  ['options', 0]
 ]
 %>
 #
@@ -15,6 +15,6 @@ elements=[
 #
 ###############################################################################
 #ZONE   HOST(S)                                 OPTIONS
-<%= shorewall_format_file(elements, node[:shorewall][:hosts]) %>
+<%= shorewall_format_file(elements, node['shorewall']['hosts']) %>
 #LAST LINE -- ADD YOUR ENTRIES BEFORE THIS LINE -- DO NOT REMOVE
 

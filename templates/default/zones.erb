@@ -1,10 +1,10 @@
 <%
 elements=[
-  [:zone, 8],
-  [:type, 16],
-  [:options, 16],
-  [:in_options, 24],
-  [:out_options, 0],
+  ['zone', 8],
+  ['type', 16],
+  ['options', 16],
+  ['in_options', 24],
+  ['out_options', 0],
 ]
 %>
 #
@@ -18,5 +18,5 @@ elements=[
 ###############################################################################
 #ZONE   TYPE            OPTIONS         IN                      OUT
 #                                       OPTIONS                 OPTIONS
-<%= shorewall_format_file(elements, node[:shorewall][:zones]) %>
+<%= shorewall_format_file(elements, node['shorewall']['zones']) %>
 #LAST LINE - ADD YOUR ENTRIES ABOVE THIS ONE - DO NOT REMOVE

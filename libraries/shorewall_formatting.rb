@@ -2,9 +2,9 @@ def shorewall_format_file(column_defs, data)
   retval = ''
   data.each { |element|
     retval << "\n"
-    if element[:description] then
+    if element['description'] then
       retval << "# "
-      retval << element[:description]
+      retval << element['description']
       retval << "\n"
     end
     pos = 0

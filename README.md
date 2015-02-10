@@ -112,43 +112,37 @@ Attributes
   <tr>
     <td><tt>['shorewall']['zones']</tt></td>
     <td>Array</td>
-    <td>Zone settings</td>
+    <td>This is an array of hashes that contain the zones settings. Each item could have the following keys: `zone`, `type`, `options`, `in_options`, `out_options`</td>
     <td><tt>[]</tt></td>
   </tr>
   <tr>
     <td><tt>['shorewall']['policy']</tt></td>
     <td>Array</td>
-    <td>Policy settings</td>
+    <td>This is an array of hashes that contain the polices settings. Each item could have the following keys: `source`, `dest`, `policy`, `log_level`, `limit`</td>
     <td><tt>[]</tt></td>
   </tr>
   <tr>
     <td><tt>['shorewall']['interfaces']</tt></td>
     <td>Array</td>
-    <td>Interfaces settings</td>
+    <td>This is an array of hashes that contain the interfaces settings. Each item could have the following keys: `zone`, `interface`, `broadcast`, `options`</td>
     <td><tt>[]</tt></td>
   </tr>
   <tr>
     <td><tt>['shorewall']['hosts']</tt></td>
     <td>Array</td>
-    <td>Hosts settings</td>
+    <td>This is an array of hashes that contain the hosts settings. Each item could have the following keys: `zone`, `hosts`, `options`</td>
     <td><tt>[]</tt></td>
   </tr>
   <tr>
     <td><tt>['shorewall']['rules']</tt></td>
     <td>Array</td>
-    <td>Rules settings</td>
-    <td><tt>[]</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['shorewall']['zones']</tt></td>
-    <td>Array</td>
-    <td>Zones settings</td>
+    <td>This is an array of hashes that contain the rules settings. Each item could have the following keys: `action`, `source`, `dest`, `proto`, `dest_port`, `source_port`, `original_dest`, `rate_limit`, `user`, `fwmark`</td>
     <td><tt>[]</tt></td>
   </tr>
   <tr>
     <td><tt>['shorewall']['tunnels']</tt></td>
     <td>Array</td>
-    <td>Tunnels settings</td>
+    <td>This is an array of hashes that contain the tunnels settings. Each item could have the following keys: `type`, `zone`, `gateway`, `gateway_zones`</td>
     <td><tt>[]</tt></td>
   </tr>
 </table>
