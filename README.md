@@ -145,6 +145,12 @@ Attributes
     <td>This is an array of hashes that contain the tunnels settings. Each item could have the following keys: <tt>type</tt>, <tt>zone</tt>, <tt>gateway</tt>, <tt>gateway_zones</tt></td>
     <td><tt>[]</tt></td>
   </tr>
+  <tr>
+    <td><tt>['shorewall']['masq']</tt></td>
+    <td>Array</td>
+    <td>This is an array of hashes that contain the masq/SNAT settings. Each item could have the following keys: <tt>interface</tt>, <tt>source</tt>, <tt>address</tt>, <tt>proto</tt>, <tt>ports</tt>, <tt>ipsec</tt>, <tt>mark</tt>, <tt>user</tt>, <tt>switch</tt></td>
+    <td><tt>[]</tt></td>
+  </tr>
 </table>
 
 For more details, see the `attributes/default.rb` file.
@@ -261,6 +267,26 @@ Examples:
     { "type": "ipsec", "zone": "net", "gateway": "0.0.0.0/0", "gateway_zones": "vpn" }
   ]
 }  
+```
+
+- Setting Masquerade
+
+```json
+"shorewall": {
+  "masq": [
+    { "interface": "eth0", "source": "192.168.0.0/24" }
+  ]
+}
+```
+
+- Setting SNAT
+
+```json
+"shorewall": {
+  "masq": [
+    { "interface": "eth0", "source": "192.168.0.0/24", "address": "1.2.3.4" }
+  ]
+}
 ```
 
 Development

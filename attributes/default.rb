@@ -14,6 +14,7 @@ default['shorewall']['hosts'] = [ ]
 default['shorewall']['rules'] = [ ]
 default['shorewall']['zones'] = [ ]
 default['shorewall']['tunnels'] = [ ]
+default['shorewall']['masq'] = []
 
 # Examples:
 
@@ -42,6 +43,11 @@ default['shorewall']['tunnels'] = [ ]
 
 #default[:shorewall][:tunnels] = [
 #    { :type => "ipsec", :zone => "net", :gateway => "0.0.0.0/0", :gateway_zones => "vpn" }
+#]
+
+#default[:shorewall][:tunnels] = [
+#    { :interface => "eth0", :source => "192.168.0.0/24"},
+#    { :interface => "eth0:8.8.8.8", :source => "192.168.1.0/24", :address => "1.2.3.4"}
 #]
 
 # vim: ai et sts=4 sw=4 ts=4
