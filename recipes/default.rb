@@ -26,7 +26,7 @@ package "shorewall" do
   action :install
 end
 
-%w{ hosts interfaces policy rules zones tunnels }.each do |conf_file|
+%w{ hosts interfaces policy rules zones tunnels masq }.each do |conf_file|
 
   template "/etc/shorewall/#{conf_file}" do
     source "#{conf_file}.erb"
