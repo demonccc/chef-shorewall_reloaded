@@ -1,9 +1,7 @@
 #
 # Author:: Eugen Mayer <eugen.mayer@kontextwork.de>
 # Cookbook Name:: shorewall_reloaded
-# Recipe:: default
-#
-# Copyright 2014, Claudio Cesar Sanchez Tejeda
+# Recipe:: shorewall4
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,5 +16,8 @@
 # limitations under the License.
 #
 
-include_recipe 'shorewall4'
+package "shorewall" do
+  action :install
+end
+
 include_recipe 'config'

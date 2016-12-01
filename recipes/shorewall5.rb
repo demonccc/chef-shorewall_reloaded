@@ -1,9 +1,7 @@
 #
 # Author:: Eugen Mayer <eugen.mayer@kontextwork.de>
 # Cookbook Name:: shorewall_reloaded
-# Recipe:: default
-#
-# Copyright 2014, Claudio Cesar Sanchez Tejeda
+# Recipe:: shorewall5
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,5 +16,12 @@
 # limitations under the License.
 #
 
-include_recipe 'shorewall4'
+# TODO: think on how to install shorewall5 the best way
+# yet its using either testing or unstable under debian, but then we need to pin quiet a bit
+# thus we need a dependency on apt
+
+package "shorewall" do
+  action :install
+end
+
 include_recipe 'config'
