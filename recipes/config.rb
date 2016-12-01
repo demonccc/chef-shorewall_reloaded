@@ -29,19 +29,23 @@ enabled=(node['shorewall']['enabled'] ? 1 : 0 )
     mode 0600
     owner "root"
     group "root"
+    variables(
+        :version => node[:shorewall][:version]
+    )
     notifies :restart, "service[shorewall]", :delayed
   end
 
 end
 
-shorewall_version = node['shorewall']['version']
-if shorewall_version == 4
+if node['shorewall']['version'] == 4
   template '/etc/shorewall/shorewall.conf' do
     source 'shorewall4.conf.erb'
+    notifies :restart, "service[shorewall]", :delayed
   end
 else # shorewall 5
   template '/etc/shorewall/shorewall.conf' do
     source 'shorewall5.conf.erb'
+    notifies :restart, "service[shorewall]", :delayed
   end
 end
 
@@ -51,6 +55,7 @@ template '/etc/default/shorewall' do
     :startup => enabled,
     :default => node['shorewall']['default']
   )
+  notifies :restart, "service[shorewall]", :delayed
 end
 
 service "shorewall" do

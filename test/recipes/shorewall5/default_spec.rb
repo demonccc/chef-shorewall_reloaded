@@ -13,17 +13,15 @@ shorewall_config = parse_config_file(shorewall_config_path, options)
 
 describe package('shorewall') do
   it { should be_installed }
+  its('version') { should match /^5\./ }
+end
+
+describe file(shorewall_config_path) do
+  its('content') { should include 'Shorewall Version 5' }
 end
 
 describe shorewall_config  do
-  its('STARTUP_ENABLED') { should eq 'No' }
-  its('LOGFILE') { should eq '/var/log/messages' }
-  its('MULTICAST') { should eq 'No' }
-  its('LOGFORMAT') { should eq '"Shorewall:%s:%s:"' }
-  its('IP_FORWARDING') { should eq 'Keep' }
-  its('LOG_MARTIANS') { should eq 'No' }
-  its('LOGTAGONLY') { should eq 'No' }
-  its('VERBOSITY') { should eq '1' }
+  its('DOCKER') { should eq 'Yes' }
 end
 
 
