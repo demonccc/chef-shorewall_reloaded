@@ -1,3 +1,4 @@
+default['shorewall']['version'] = 4
 default['shorewall']['enabled'] = false
 
 default['shorewall']['default']['options'] = ""
@@ -24,7 +25,7 @@ default['shorewall']['config']['logfile']='/var/log/messages'
 default['shorewall']['config']['logformat']='Shorewall:%s:%s:'
 default['shorewall']['config']['logtagonly']='No'
 default['shorewall']['config']['docker']='Yes'
-default['shorewall']['config']['ip_forwarding']='keep'
+default['shorewall']['config']['ip_forwarding']='Keep'
 # shorewall 5 only
 default['shorewall']['config']['log_verbosity']=2
 default['shorewall']['config']['startup_log']='/var/log/shorewall-init.log'

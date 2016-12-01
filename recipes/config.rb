@@ -34,14 +34,19 @@ enabled=(node['shorewall']['enabled'] ? 1 : 0 )
 
 end
 
+shorewall_version = node['shorewall']['version']
 if shorewall_version == 4
-  template "/etc/shorewall/shorewall4.conf"
+  template '/etc/shorewall/shorewall.conf' do
+    source 'shorewall4.conf.erb'
+  end
 else # shorewall 5
-  template "/etc/shorewall/shorewall5.conf"
+  template '/etc/shorewall/shorewall.conf' do
+    source 'shorewall5.conf.erb'
+  end
 end
 
-template "/etc/default/shorewall" do
-  source "default.erb"
+template '/etc/default/shorewall' do
+  source 'default.erb'
   variables( 
     :startup => enabled,
     :default => node['shorewall']['default']

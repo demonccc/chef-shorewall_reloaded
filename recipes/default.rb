@@ -18,5 +18,5 @@
 # limitations under the License.
 #
 
-include_recipe 'shorewall4'
-include_recipe 'config'
+include_recipe 'shorewall_reloaded::shorewall4'
+include_recipe 'shorewall_reloaded::config'

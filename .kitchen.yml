@@ -18,13 +18,9 @@ platforms:
 suites:
   - name: default
     run_list:
+      - recipe[minitest-handler]
       - recipe[shorewall_reloaded::default]
     verifier:
       inspec_tests:
         - test/recipes
-    attributes: { sshd: {
-        sshd_config: {
-          port: 22
-        }
-      }
-    }
+    attributes:

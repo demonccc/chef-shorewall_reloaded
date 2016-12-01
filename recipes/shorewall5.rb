@@ -24,4 +24,4 @@ package "shorewall" do
   action :install
 end
 
-include_recipe 'config'
+include_recipe 'shorewall_reloaded::config'
