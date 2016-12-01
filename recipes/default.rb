@@ -18,4 +18,7 @@
 # limitations under the License.
 #
 
-include_recipe 'shorewall_reloaded::shorewall_any'
+package "shorewall" do
+  action :install
+end
+include_recipe 'shorewall_reloaded::config'

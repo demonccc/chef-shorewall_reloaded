@@ -33,17 +33,17 @@ Recipes
 -------
 
 ### shorewall_reloaded::default
-This cookbook installs and configures Shorewall4.x in the node.
+This cookbook installs and configures shorewall on the your node. The configuration version is derived from default[:shorewall][:version]
 
-### shorewall_reloaded::shorewall4
-the same as default
+### shorewall_reloaded::shorewall_any
+the same as default, do not really use this di
 
 ### shorewall_reloaded::shorewall5
-Installs Shorewall5. This will not ensure you actually do install the right binary!
+Forces a shorewall5 based configuration (overrides default[:shorewall][:version]). 
+This will not ensure you actually do install the right binary, see shorewall5_apt_fix below
 
 ### shorewall_reloaded::shorewall5_apt_fix
-(yet debian jessie only) Ensure proper sources are added to install shorewall 5.x
-
+(Yet debian jessie only) Ensure proper sources are added to install the shorewall 5.x package
 
 Attributes
 ----------
