@@ -1,0 +1,30 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  # You may wish to disable always updating cookbooks in CI or other testing environments.
+  # For example:
+  #   always_update_cookbooks: <%= !ENV['CI'] %>
+  always_update_cookbooks: true
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: debian-8.6
+
+suites:
+  - name: default
+    run_list:
+      - recipe[shorewall_reloaded::default]
+    verifier:
+      inspec_tests:
+        - test/recipes
+    attributes: { sshd: {
+        sshd_config: {
+          port: 22
+        }
+      }
+    }
