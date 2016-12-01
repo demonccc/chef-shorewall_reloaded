@@ -21,7 +21,7 @@ suites:
       - recipe[shorewall_reloaded_test::shorewall4]
     verifier:
       inspec_tests:
-        - test/recipes
+        - test/recipes/default
     attributes:
   - name: shorewall5
     run_list:

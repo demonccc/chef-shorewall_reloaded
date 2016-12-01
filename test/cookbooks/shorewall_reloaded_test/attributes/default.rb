@@ -22,3 +22,5 @@ node.default[:shorewall][:rules].push({
     :dest_port => 22,
     :action => :ACCEPT
 })
+
+node.default[:shorewall][:config][:ip_forwarding]='Yes'

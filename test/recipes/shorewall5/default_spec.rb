@@ -22,6 +22,7 @@ end
 
 describe shorewall_config  do
   its('DOCKER') { should eq 'Yes' }
+  its('IP_FORWARDING') { should eq 'Yes' }
 end
 
 

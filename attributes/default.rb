@@ -26,11 +26,11 @@ default['shorewall']['config']['logformat']='Shorewall:%s:%s:'
 default['shorewall']['config']['logtagonly']='No'
 default['shorewall']['config']['docker']='Yes'
 default['shorewall']['config']['ip_forwarding']='Keep'
+default['shorewall']['config']['multicast']='No'
 # shorewall 5 only
 default['shorewall']['config']['log_verbosity']=2
 default['shorewall']['config']['startup_log']='/var/log/shorewall-init.log'
 default['shorewall']['config']['accounting']='Yes'
-default['shorewall']['config']['multicast']='No'
 
 
 # Examples:

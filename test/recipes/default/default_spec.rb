@@ -15,12 +15,21 @@ describe package('shorewall') do
   it { should be_installed }
 end
 
+describe package('shorewall') do
+  it { should be_installed }
+  its('version') { should match /^4\./ }
+end
+
+describe file(shorewall_config_path) do
+  its('content') { should include 'shorewall.conf V4.0' }
+end
+
 describe shorewall_config  do
   its('STARTUP_ENABLED') { should eq 'Yes' }
   its('LOGFILE') { should eq '/var/log/messages' }
   its('MULTICAST') { should eq 'No' }
   its('LOGFORMAT') { should eq '"Shorewall:%s:%s:"' }
-  its('IP_FORWARDING') { should eq 'Keep' }
+  its('IP_FORWARDING') { should eq 'Yes' }
   its('LOG_MARTIANS') { should eq 'No' }
   its('LOGTAGONLY') { should eq 'No' }
   its('VERBOSITY') { should eq '1' }
