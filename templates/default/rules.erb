@@ -25,6 +25,10 @@ elements=[
 #                                                       PORT    PORT(S)         DEST            LIMIT           GROUP
 #SECTION ESTABLISHED
 #SECTION RELATED
+<% if @version == '4' -%>
 SECTION NEW
+<% else -%>
+?SECTION NEW
+<% end -%>
 <%= shorewall_format_file(elements, node['shorewall']['rules']) %>
 #LAST LINE -- ADD YOUR ENTRIES BEFORE THIS ONE -- DO NOT REMOVE

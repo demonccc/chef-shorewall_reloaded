@@ -24,37 +24,26 @@ The following platforms have been tested with this cookbook, meaning that the re
 Capabilities
 ------------
 
+It supports shorewall4 and shorewall5, please see the recipes below.
+
 Creates pretty Shorewall configuration files intended to be aesthetically
 comparable to hand-written ones.
 
-The following is a typical example of output (in this case, for a rules file):
+Recipes
+-------
 
-    #
-    # Shorewall version 4 - Rules File
-    #
-    # For information on the settings in this file, type "man shorewall-rules"
-    #
-    # The manpage is also online at
-    # http://www.shorewall.net/manpages/shorewall-rules.html
-    #
-    ############################################################################################################################
-    #ACTION         SOURCE          DEST            PROTO   DEST    SOURCE          ORIGINAL        RATE            USER/   MARK
-    #                                                       PORT    PORT(S)         DEST            LIMIT           GROUP
-    #SECTION ESTABLISHED
-    #SECTION RELATED
-    SECTION NEW
+### shorewall_reloaded::default
+This cookbook installs and configures shorewall on the your node. The configuration version is derived from default[:shorewall][:version]
 
-    # Allow all from VM host
-    ACCEPT          net:10.0.2.2    fw              -       -       -               -               -               -       -
+### shorewall_reloaded::shorewall_any
+the same as default, do not really use this di
 
-    # Incoming SSH to firewall
-    ACCEPT          all             fw              tcp     22      -               -               -               -       -
+### shorewall_reloaded::shorewall5
+Forces a shorewall5 based configuration (overrides default[:shorewall][:version]). 
+This will not ensure you actually do install the right binary, see shorewall5_apt_fix below
 
-    # Allow database load-balancer db1.vguest access to repmgr monitor
-    ACCEPT          lan:192.168.123.10 \
-                                    fw              tcp     5480    -               -               -               -       -
-
-Note how line continuations are added as necessary to keep column alignment in place.
+### shorewall_reloaded::shorewall5_apt_fix
+(Yet debian jessie only) Ensure proper sources are added to install the shorewall 5.x package
 
 Attributes
 ----------
@@ -154,12 +143,6 @@ Attributes
 </table>
 
 For more details, see the `attributes/default.rb` file.
-
-Recipes
--------
-
-### shorewall_reloaded::default
-This cookbook installs and configures Shorewall in the node.
 
 Usage
 -----
@@ -289,11 +272,50 @@ Examples:
 }
 ```
 
+
+Configuration
+-------------
+
+The following is a typical example of output (in this case, for a rules file):
+
+    #
+    # Shorewall version 4 - Rules File
+    #
+    # For information on the settings in this file, type "man shorewall-rules"
+    #
+    # The manpage is also online at
+    # http://www.shorewall.net/manpages/shorewall-rules.html
+    #
+    ############################################################################################################################
+    #ACTION         SOURCE          DEST            PROTO   DEST    SOURCE          ORIGINAL        RATE            USER/   MARK
+    #                                                       PORT    PORT(S)         DEST            LIMIT           GROUP
+    #SECTION ESTABLISHED
+    #SECTION RELATED
+    SECTION NEW
+
+    # Allow all from VM host
+    ACCEPT          net:10.0.2.2    fw              -       -       -               -               -               -       -
+
+    # Incoming SSH to firewall
+    ACCEPT          all             fw              tcp     22      -               -               -               -       -
+
+    # Allow database load-balancer db1.vguest access to repmgr monitor
+    ACCEPT          lan:192.168.123.10 \
+                                    fw              tcp     5480    -               -               -               -       -
+
+Note how line continuations are added as necessary to keep column alignment in place.
+
 Development
 -----------
 
 - Source hosted at [GitHub][repo]
 - Report issues/Questions/Feature requests on [GitHub Issues][issues]
+
+Tests
+-----
+
+Run the test by using kitchen
+```kitchen test```
 
 Contributing
 ------------
@@ -308,6 +330,7 @@ License and Authors
 -------------------
 
 Author:: Claudio Cesar Sanchez Tejeda <demonccc@gmail.com>
+Author:: Eugen Mayer (eugenmayer on github) 
 
 Copyright:: 2014, Claudio Cesar Sanchez Tejeda
 

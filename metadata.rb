@@ -11,3 +11,5 @@ recipe                  'shorewall_reloaded', 'Configures and activates Shorewal
 %w{ debian ubuntu }.each do |os|
   supports os
 end
+
+depends 'apt'

@@ -1,6 +1,6 @@
 #
-# Author:: Claudio Cesar Sanchez Tejeda <demonccc@gmail.com>
-# Cookbook Name:: haproxy_reloaded
+# Author:: Eugen Mayer <eugen.mayer@kontextwork.de>
+# Cookbook Name:: shorewall_reloaded
 # Recipe:: default
 #
 # Copyright 2014, Claudio Cesar Sanchez Tejeda
@@ -18,41 +18,7 @@
 # limitations under the License.
 #
 
-require 'set'
-
-enabled=(node['shorewall']['enabled'] ? 1 : 0 )
-
 package "shorewall" do
   action :install
 end
-
-%w{ hosts interfaces policy rules zones tunnels masq }.each do |conf_file|
-
-  template "/etc/shorewall/#{conf_file}" do
-    source "#{conf_file}.erb"
-    mode 0600
-    owner "root"
-    group "root"
-    notifies :restart, "service[shorewall]", :delayed
-  end
-
-end
-
-template "/etc/shorewall/shorewall.conf"
-
-template "/etc/default/shorewall" do
-  source "default.erb"
-  variables( 
-    :startup => enabled,
-    :default => node['shorewall']['default']
-  )
-end
-
-service "shorewall" do
-  supports [ :status, :restart ]
-  if node['shorewall']['enabled']
-    action [:start, :enable]
-  else
-    action [:stop, :disable]
-  end
-end
+include_recipe 'shorewall_reloaded::config'
