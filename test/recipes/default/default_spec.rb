@@ -23,7 +23,7 @@ describe shorewall_config  do
   its('IP_FORWARDING') { should eq 'Keep' }
   its('LOG_MARTIANS') { should eq 'No' }
   its('LOGTAGONLY') { should eq 'No' }
-  its('VERBOSITY') { should eq 1 }
+  its('VERBOSITY') { should eq '1' }
 end
 
 
